@@ -29,7 +29,7 @@ This repo contains two distinct directories, which groups containing projects in
       - [TodoMVC CSS](#todomvc-css)
     - [Tools](#tools)
       - [Benchmark Connector](#benchmark-connector)
-      - [Workloads Server](#workloads-manager)
+      - [Workloads Manager](#workloads-manager)
 
 ## Development
 
@@ -60,7 +60,7 @@ pnpm -F news-site-next dev
 
 ### How to run default workloads
 
-See [Workloads Server](#workloads-manager).
+See [Workloads Manager](#workloads-manager).
 
 ```bash
 pnpm -F workloads-manager start
@@ -511,7 +511,7 @@ pnpm -F workloads-manager connect
 pnpm -F workloads-manager start
 ```
 
-The workloads server depends on a `workloads.config.json` file, which contains a list of apps to run.
+The workloads manager depends on a `workloads.config.json` file, which contains a list of apps to run.
 
 - The `ports` key is a list of ports to start a server on.
 - The `workloads` key contains an array of workloads.
