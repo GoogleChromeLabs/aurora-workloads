@@ -19,7 +19,8 @@
         },
         { 
             "name": "news-site-next",
-            "type":"static"
+            "type":"static",
+            "distDirectory": "/dist-base"
         },
         {
             "name": "news-site-nuxt",

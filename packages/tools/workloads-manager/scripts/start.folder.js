@@ -26,7 +26,7 @@ async function createApp({ workloads, start }) {
   const app = express();
 
   for (const workload of workloads) {
-    const { name } = workload;
+    const { name, distDirectory = "/dist" } = workload;
 
     const results = await findDirectoriesByName({
       start,
@@ -35,7 +35,7 @@ async function createApp({ workloads, start }) {
     });
 
     const directory = results[0];
-    app.use(`/${name}`, express.static(`${directory}/dist`));
+    app.use(`/${name}`, express.static(`${directory}${distDirectory}`));
   }
 
   return app;
