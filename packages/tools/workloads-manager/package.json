@@ -13,10 +13,11 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "build:apps": "TYPE='static' node scripts/build.js",
     "connect": "DATA='./workloads.config.json' node scripts/connect.js",
-    "start": "DATA='./workloads.config.domain.json' node scripts/start.domain.js",
+    "start:domain": "DATA='./workloads.config.domain.json' node scripts/start.domain.js",
     "start:folder": "DATA='./workloads.config.folder.json' node scripts/start.folder.js",
     "start:ports": "DATA='./workloads.config.ports.json' node scripts/start.ports.js",
-    "start:all": "node scripts/start.all.js"
+    "start:all": "node scripts/start.all.js",
+    "start": "npm run start:folder"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
