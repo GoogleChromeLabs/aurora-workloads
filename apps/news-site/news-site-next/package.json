@@ -1,15 +1,12 @@
 {
     "name": "news-site-next",
     "version": "1.0.0",
-    "meta": {
-        "frameworkName": "next",
-        "frameworkVersion": "13.5.1"
-    },
     "license": "SEE LICENSE IN LICENSE",
     "engines": {
         "node": ">=18.13.0",
         "npm": ">=8.19.3"
     },
+    "private": true,
     "scripts": {
         "prepare": "node node_modules/benchmark-connector/dist/prepare.min.js",
         "dev": "npm run prepare && next dev",
