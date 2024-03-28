@@ -24,7 +24,7 @@ const staticWithBaseConfig = {
         unoptimized: true,
     },
     basePath: process.env.BASE
-}
+};
 
 const dynamicConfig = {
     distDir: "output",
