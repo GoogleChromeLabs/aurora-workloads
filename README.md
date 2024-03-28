@@ -74,9 +74,10 @@ The following scripts are currently supported by all workloads:
 - `build:static`: Bundles all necessary files and copies them into a `dist` folder.
 - `start:static`: Starts a node server to serve files from the `dist` folder.
 
-These scripts can be used either by opening a terminal in each workloads directory itself, or from the root of this repo with pnpm and a filter flag.
+These scripts can be used either by opening a terminal in each workloads directory itself, or from the root of this repo.
 
 From a workloads directory, by navigating to the folder in your finder and opening a terminal.
+
 Example `news-site-next`:
 
 ```bash
@@ -85,7 +86,8 @@ npm run build:static
 npm run start:static
 ```
 
-From the root of the repo:
+From the root of the repo with pnpm and a filter flag.
+
 Example `news-site-next`:
 
 ```bash
