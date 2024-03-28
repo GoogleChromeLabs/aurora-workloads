@@ -1,5 +1,5 @@
 {
-  "name": "workloads-server",
+  "name": "workloads-manager",
   "version": "1.0.0",
   "description": "A server for all apps.",
   "license": "SEE LICENSE IN LICENSE",

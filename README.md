@@ -29,7 +29,7 @@ This repo contains two distinct directories, which groups containing projects in
       - [TodoMVC CSS](#todomvc-css)
     - [Tools](#tools)
       - [Benchmark Connector](#benchmark-connector)
-      - [Workloads Server](#workloads-server)
+      - [Workloads Server](#workloads-manager)
 
 ## Development
 
@@ -49,7 +49,7 @@ Once pnpm is available, the following script installs all dependencies for all p
 pnpm install
 ```
 
-### How to run a workloads
+### How to run a workload
 
 To run a single app, a filter function from pnpm can be used from the root directory. Each app can be targeted by referencing its package name.
 For example to run the `news-site-next` app in development mode, the following command can be used:
@@ -60,10 +60,10 @@ pnpm -F news-site-next dev
 
 ### How to run default workloads
 
-See [Workloads Server](#workloads-server).
+See [Workloads Server](#workloads-manager).
 
 ```bash
-pnpm -F workloads-server start
+pnpm -F workloads-manager start
 ```
 
 ### Available Workload scripts
@@ -497,7 +497,7 @@ pnpm -F sanitize-language format
 pnpm -F sanitize-language build
 ```
 
-#### workloads-server
+#### workloads-manager
 
 Manages all workloads, by using the following commands:
 
@@ -505,10 +505,10 @@ Manages all workloads, by using the following commands:
 -   start: starts node server for static workloads from the workloads.config.json file.
 
 ```bash
-pnpm -F workloads-server format
-pnpm -F workloads-server build
-pnpm -F workloads-server connect
-pnpm -F workloads-server start
+pnpm -F workloads-manager format
+pnpm -F workloads-manager build
+pnpm -F workloads-manager connect
+pnpm -F workloads-manager start
 ```
 
 The workloads server depends on a `workloads.config.json` file, which contains a list of apps to run.
