@@ -60,7 +60,7 @@ async function findDirectories({ start, target, root, directories = [] }) {
 }
 
 /**
- * findDirectoryByName
+ * findDirectoriesByName
  * 
  * Takes a start directory and searches for sub directories with the target name.
  * 
@@ -71,7 +71,7 @@ async function findDirectories({ start, target, root, directories = [] }) {
  * @param {string[]} config.directories - Array of directories.
  * @returns {string[]} Array of directories.
  */
-async function findDirectoryByName({ start, target, root, result = [] }) {
+async function findDirectoriesByName({ start, target, root, result = [] }) {
   const list = await fs.readdir(start);
   for (const entry of list) {
     const current = path.resolve(start, entry);
@@ -80,7 +80,7 @@ async function findDirectoryByName({ start, target, root, result = [] }) {
       if (entry === target) {
         result.push(current);
       } else if (!excludeList.includes(entry)) {
-        await findDirectoryByName({
+        await findDirectoriesByName({
           start: current,
           target,
           root,
@@ -163,7 +163,7 @@ async function executeScript({ script, directory, env = {} }) {
 
 module.exports = {
   findDirectories,
-  findDirectoryByName,
+  findDirectoriesByName,
   executeScript,
   executeScriptSync,
 };

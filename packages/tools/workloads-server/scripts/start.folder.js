@@ -3,18 +3,18 @@ const path = require("path");
 const chalk = require("chalk");
 const express = require("express");
 
-const { findDirectoryByName } = require("./utils");
+const { findDirectoriesByName } = require("./utils");
 const { checkPort, getLocalHosts } = require("./ports");
 
 /**
  * createApp
- * 
+ *
  * Creates an express server, which serves workloads in a nested structure.
- * 
+ *
  * Example:
  * localhost/news-site-next
  * localhost/news-site-nuxt
- * 
+ *
  * @param {Object} config - Config object for function to run.
  * @param {Object} config.workloads - Workloads from workloads.config.json file.
  * @param {string} config.start - Start folder to use for discovering workloads folders.
@@ -28,7 +28,7 @@ async function createApp({ workloads, start }) {
   for (const workload of workloads) {
     const { name } = workload;
 
-    const results = await findDirectoryByName({
+    const results = await findDirectoriesByName({
       start,
       target: name,
       root,

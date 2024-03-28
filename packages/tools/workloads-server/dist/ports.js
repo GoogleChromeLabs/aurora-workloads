@@ -46,6 +46,25 @@ async function getPorts({ total = 1 }) {
 }
 
 /**
+ * checkPort
+ * 
+ * Takes a port and checks if it is open or not.
+ * 
+ * @param {Object} config - Config object for function to run.
+ * @param {number} config.port - Port to check.
+ * @return {Promise<Boolean>} Wheter port is open or not.
+ */
+async function checkPort({ port }) {
+  try {
+    await getPort({ port });
+  } catch (e) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
  * checkPorts
  * 
  * Takes an array of ports and check if they are all open.
@@ -61,25 +80,6 @@ async function checkPorts({ ports }) {
     } catch (e) {
       return false;
     }
-  }
-
-  return true;
-}
-
-/**
- * checkPort
- * 
- * Takes a port and checks if it is open or not.
- * 
- * @param {Object} config - Config object for function to run.
- * @param {number} config.port - Port to check.
- * @return {Promise<Boolean>} Wheter port is open or not.
- */
-async function checkPort({ port }) {
-  try {
-    await getPort({ port });
-  } catch (e) {
-    return false;
   }
 
   return true;

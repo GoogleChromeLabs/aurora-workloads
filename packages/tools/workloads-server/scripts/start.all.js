@@ -7,17 +7,17 @@ const chalk = require("chalk");
 const defaultPorts = [
   3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012, 3013,
   3014, 3015, 3016, 3017, 3018, 3019, 3020, 3021, 3022, 3023, 3024, 3025, 3026,
-  3027, 3028, 3029, 3030
+  3027, 3028, 3029, 3030,
 ];
 
 /**
  * Start all workloads in the apps directory, by searching for package.json files in the apps directory.
  * Ports are assigned in different ways:
- * 
+ *
  * Random ports - Selects a random port for each workload to start it with.
  * Default ports - Uses the ports from the defaultPorts array to start all workloads.
  * PORTS env - Uses the ports from the PORTS env that's passed in to start all workloads.
- * 
+ *
  * Examples:
  * "start:all": "node scripts/start.all.js",
  * "start:all:ports": "PORTS='5001,5002' node scripts/start.all.js",

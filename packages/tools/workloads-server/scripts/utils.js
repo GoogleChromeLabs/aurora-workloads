@@ -22,10 +22,10 @@ const excludeList = [
 
 /**
  * findDirectories
- * 
+ *
  * Takes a start directory and searches for sub directories that contain a target file.
  * If a target file is present, it will be returned in a directories array.
- * 
+ *
  * @param {Object} config - Config object for function to run.
  * @param {string} config.start - Start folder to search from.
  * @param {string} config.target - The file to search for.
@@ -60,10 +60,10 @@ async function findDirectories({ start, target, root, directories = [] }) {
 }
 
 /**
- * findDirectoryByName
- * 
+ * findDirectoriesByName
+ *
  * Takes a start directory and searches for sub directories with the target name.
- * 
+ *
  * @param {Object} config - Config object for function to run.
  * @param {string} config.start - Start folder to search from.
  * @param {string} config.target - The directory name.
@@ -71,7 +71,7 @@ async function findDirectories({ start, target, root, directories = [] }) {
  * @param {string[]} config.directories - Array of directories.
  * @returns {string[]} Array of directories.
  */
-async function findDirectoryByName({ start, target, root, result = [] }) {
+async function findDirectoriesByName({ start, target, root, result = [] }) {
   const list = await fs.readdir(start);
   for (const entry of list) {
     const current = path.resolve(start, entry);
@@ -80,7 +80,7 @@ async function findDirectoryByName({ start, target, root, result = [] }) {
       if (entry === target) {
         result.push(current);
       } else if (!excludeList.includes(entry)) {
-        await findDirectoryByName({
+        await findDirectoriesByName({
           start: current,
           target,
           root,
@@ -94,9 +94,9 @@ async function findDirectoryByName({ start, target, root, result = [] }) {
 
 /**
  * executeScriptSync
- * 
+ *
  * Function to execute a script sync.
- * 
+ *
  * @param {Object} config - Config object for function to run.
  * @param {string} config.script - Name of the script to run.
  * @param {string} config.directory - Directory of the script.
@@ -126,9 +126,9 @@ function executeScriptSync({ script, directory, env = {} }) {
 
 /**
  * executeScript
- * 
+ *
  * Function to execute a script async.
- * 
+ *
  * @param {Object} config - Config object for function to run.
  * @param {string} config.script - Name of the script to run.
  * @param {string} config.directory - Directory of the script.
@@ -163,7 +163,7 @@ async function executeScript({ script, directory, env = {} }) {
 
 module.exports = {
   findDirectories,
-  findDirectoryByName,
+  findDirectoriesByName,
   executeScript,
   executeScriptSync,
 };

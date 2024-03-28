@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const express = require("express");
 var vhost = require("vhost");
 
-const { findDirectoryByName } = require("./utils");
+const { findDirectoriesByName } = require("./utils");
 const { checkPort } = require("./ports");
 
 /**
@@ -26,7 +26,7 @@ async function createApp({ workloads, start }) {
     const { name, domain } = workload;
     const host = domain.replace("*", name);
 
-    const results = await findDirectoryByName({
+    const results = await findDirectoriesByName({
       start,
       target: name,
       root,

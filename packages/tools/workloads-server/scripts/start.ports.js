@@ -2,7 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const chalk = require("chalk");
 
-const { findDirectoryByName, executeScript } = require("./utils");
+const { findDirectoriesByName, executeScript } = require("./utils");
 const { checkPort, getLocalHosts } = require("./ports");
 
 // workloads.config has a type property to determine which script to use to start the workload.
@@ -39,7 +39,7 @@ async function start() {
       // What should happen in this case?
       throw Error(`Port ${port} is not valid!`);
     }
-    const results = await findDirectoryByName({
+    const results = await findDirectoriesByName({
       start,
       target: name,
       root,
