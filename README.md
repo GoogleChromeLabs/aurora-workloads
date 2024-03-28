@@ -74,6 +74,26 @@ The following scripts are currently supported by all workloads:
 - `build:static`: Bundles all necessary files and copies them into a `dist` folder.
 - `start:static`: Starts a node server to serve files from the `dist` folder.
 
+These scripts can be used either by opening a terminal in each workloads directory itself, or from the root of this repo with pnpm and a filter flag.
+
+From a workloads directory, by navigating to the folder in your finder and opening a terminal.
+Example `news-site-next`:
+
+```bash
+npm run dev
+npm run build:static
+npm run start:static
+```
+
+From the root of the repo:
+Example `news-site-next`:
+
+```bash
+pnpm -F news-site-next dev
+pnpm -F news-site-next build:static
+pnpm -F news-site-next start:static
+```
+
 ### Workload-Benchmark communication
 
 To enable communication between the workloads and a benchmark using postMessage, the [benchmark-connector](#benchmark-connector) package is used.
