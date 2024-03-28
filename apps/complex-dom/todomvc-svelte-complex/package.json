@@ -18,9 +18,6 @@
     "dependencies": {
         "benchmark-connector": "workspace: *",
         "http-server": "^14.1.1"
-    },
-    "files": [
-        "/dist"
-    ]
+    }
   }
   

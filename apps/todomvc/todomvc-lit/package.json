@@ -119,8 +119,5 @@
         "prepare": {
             "command": "HOST='./' node node_modules/benchmark-connector/dist/prepare.min.js"
         }
-    },
-    "files": [
-        "/dist"
-    ]
+    }
 }

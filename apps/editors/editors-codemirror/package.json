@@ -24,8 +24,5 @@
     "dependencies": {
         "@codemirror/state": "^6.4.1",
         "http-server": "^14.1.1"
-    },
-    "files": [
-        "/dist"
-    ]
+    }
 }
